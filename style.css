@@ -1,0 +1,5252 @@
+/* ==========================
+   Memories with Shikha
+   Premium Theme
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+    min-height:100vh;
+    overflow-x:hidden;
+    color:#fff;
+}
+
+/* Loader */
+
+#loader{
+    width:100%;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+#loader h1{
+    font-family:'Great Vibes',cursive;
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+#loader p{
+    font-size:1rem;
+    margin-bottom:20px;
+}
+
+.loader-bar{
+    width:260px;
+    height:8px;
+    background:#ffffff55;
+    border-radius:30px;
+    overflow:hidden;
+}
+
+.loader-fill{
+    height:100%;
+    width:0%;
+    background:#fff;
+    animation:loading 3s linear forwards;
+}
+
+@keyframes loading{
+
+0%{
+width:0%;
+}
+
+100%{
+width:100%;
+}
+
+}
+
+/* Main Website */
+
+#website{
+    display:none;
+}
+
+/* Hero */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:25px;
+}
+
+.hero h1{
+    font-size:3rem;
+    font-family:'Great Vibes',cursive;
+}
+
+.hero h2{
+    margin-top:10px;
+    font-size:2rem;
+}
+
+.hero p{
+    margin-top:20px;
+    max-width:600px;
+    line-height:1.8;
+    font-size:1rem;
+}
+
+button{
+
+margin-top:35px;
+
+padding:15px 35px;
+
+border:none;
+
+border-radius:50px;
+
+background:white;
+
+color:#ff4f81;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+box-shadow:0 8px 20px rgba(0,0,0,.2);
+
+}
+
+button:hover{
+
+transform:scale(1.05);
+
+}
+/* Hide Sections */
+
+.hidden{
+    display:none;
+}
+
+/* Gift Section */
+
+#giftSection,
+#letterSection,
+#gallerySection,
+#celebrationSection,
+#finalSection{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+}
+
+.gift-box{
+    font-size:90px;
+    animation:bounce 1.5s infinite;
+    cursor:pointer;
+}
+
+@keyframes bounce{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+}
+
+.letter-card,
+.final-card{
+
+background:rgba(255,255,255,.18);
+
+backdrop-filter:blur(15px);
+
+padding:30px;
+
+border-radius:20px;
+
+max-width:700px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+}
+
+.letter-card h2,
+.final-card h1{
+
+margin-bottom:20px;
+
+}
+
+.letter-card p,
+.final-card p{
+
+line-height:1.9;
+
+font-size:17px;
+
+}
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+
+gap:15px;
+
+width:100%;
+
+max-width:900px;
+
+margin-top:30px;
+
+}
+
+.gallery img{
+
+width:100%;
+
+border-radius:18px;
+
+transition:.4s;
+
+box-shadow:0 8px 18px rgba(0,0,0,.25);
+
+}
+
+.gallery img:hover{
+
+transform:scale(1.06);
+
+}
+
+.celebration-content{
+
+text-align:center;
+
+}
+
+.cake{
+
+font-size:100px;
+
+margin:20px 0;
+
+animation:floatCake 2s infinite;
+
+}
+
+@keyframes floatCake{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+}
+
+@media(max-width:600px){
+
+.hero h1{
+
+font-size:2.4rem;
+
+}
+
+.hero h2{
+
+font-size:1.6rem;
+
+}
+
+button{
+
+width:90%;
+
+}
+
+}
+#musicBtn{
+    position:fixed;
+    right:20px;
+    bottom:80px;
+    z-index:9999;
+    padding:12px 18px;
+    border:none;
+    border-radius:50px;
+    background:#ff4f81;
+    color:#fff;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+/* ===== Image Viewer ===== */
+
+#imageModal{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+#imageModal img{
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(255,255,255,0.3);
+}
+
+#closeImage{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}   
+/* ===== Sparkles Background ===== */
+
+#sparkles{
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.sparkle{
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle 3s linear forwards;
+}
+
+@keyframes twinkle{
+    0%{
+        opacity:0;
+        transform:scale(0);
+    }
+    50%{
+        opacity:1;
+        transform:scale(1.8);
+    }
+    100%{
+        opacity:0;
+        transform:scale(0);
+    }
+}
+/* ===== Fireworks ===== */
+
+.firework{
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+}
+/* ===== Mobile Final Polish ===== */
+
+html{
+    scroll-behavior: smooth;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+button{
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+button:active{
+    transform: scale(0.96);
+}
+
+@media (max-width:768px){
+
+    .hero,
+    .gift-box,
+    .letter-card,
+    .celebration-content,
+    .final-card{
+        width:90%;
+        margin:auto;
+    }
+
+    .gallery{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
+    }
+
+    .gallery img{
+        width:100%;
+        border-radius:12px;
+    }
+
+    h1{
+        font-size:2rem;
+    }
+
+    h2{
+        font-size:1.5rem;
+    }
+
+    p{
+        font-size:1rem;
+        line-height:1.7;
+    }
+
+    button{
+        width:90%;
+        max-width:320px;
+    }
+}
+/* ===== Falling Rose Petals ===== */
+
+#petals{
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.petal{
+    position: absolute;
+    top: -50px;
+    font-size: 22px;
+    animation: fallPetal linear forwards;
+}
+
+@keyframes fallPetal{
+    0%{
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 1;
+    }
+
+    100%{
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+/* ===== Premium Page Transition ===== */
+
+section{
+    transition: all .7s ease;
+}
+
+.slide-out{
+    opacity:0;
+    transform:translateX(-80px);
+}
+
+.slide-in{
+    opacity:0;
+    transform:translateX(80px);
+    animation:slideIn .7s forwards;
+}
+
+@keyframes slideIn{
+
+    from{
+        opacity:0;
+        transform:translateX(80px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+}
+/* Premium Slide Animation */
+
+/* 🎬 Cinematic Fade + Zoom */
+
+.fade-out{
+    animation: fadeOutZoom .45s ease forwards;
+}
+
+.fade-in{
+    animation: fadeInZoom .7s ease forwards;
+}
+
+@keyframes fadeOutZoom{
+    from{
+        opacity:1;
+        transform:scale(1);
+        filter:blur(0);
+    }
+    to{
+        opacity:0;
+        transform:scale(.96);
+        filter:blur(6px);
+    }
+}
+
+@keyframes fadeInZoom{
+    from{
+        opacity:0;
+        transform:scale(1.04);
+        filter:blur(6px);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+        filter:blur(0);
+    }
+}
+
+@keyframes slideIn{
+    from{
+        opacity:0;
+        transform:translateX(80px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes slideOut{
+    from{
+        opacity:1;
+        transform:translateX(0);
+    }
+    to{
+        opacity:0;
+        transform:translateX(-80px);
+    }
+}
+/* Hero Intro Animation */
+
+.hero-intro{
+    animation: heroIntro 1s ease forwards;
+}
+
+@keyframes heroIntro{
+    from{
+        opacity:0;
+        transform:translateY(60px) scale(0.96);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+/* Made by Animation */
+
+.made-by{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1.5s ease;
+    color: #ffd6e7;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+.made-by.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+.stars{
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.stars::before,
+.stars::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-image:
+      radial-gradient(white 1px, transparent 1px),
+      radial-gradient(white 1px, transparent 1px);
+    background-size:120px 120px, 180px 180px;
+    background-position:0 0, 60px 60px;
+    animation: twinkle 6s linear infinite;
+    opacity:.6;
+}
+
+.stars::after{
+    animation-duration:10s;
+    opacity:.3;
+}
+
+@keyframes twinkle{
+    0%,100%{opacity:.3;}
+    50%{opacity:.8;}
+}
+#starCanvas{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-2;
+    pointer-events:none;
+}
+/* 🌌 Deep Night Glow */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-3;
+
+    background:
+        radial-gradient(circle at top, rgba(40,60,120,.35), transparent 60%),
+        radial-gradient(circle at bottom, rgba(15,20,60,.45), transparent 70%),
+        linear-gradient(to bottom, #050816, #0b1026);
+
+    animation: nightGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes nightGlow{
+    from{
+        filter: brightness(1);
+    }
+    to{
+        filter: brightness(1.15);
+    }
+}
+/* 💥 Button Click Animation */
+
+.btn{
+    transition: transform .2s ease;
+}
+
+.btn:active{
+    transform: scale(.92);
+}
+
+@keyframes burst{
+    0%{
+        transform: scale(1);
+    }
+    40%{
+        transform: scale(.88);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.btn.burst{
+    animation: burst .35s ease;
+}
+/* 🌙 Moon */
+
+body::after{
+    content:"";
+    position:fixed;
+    top:60px;
+    right:60px;
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background:radial-gradient(circle at 30% 30%, #ffffff, #f8f8e8 60%, #d8d8c8);
+    box-shadow:
+        0 0 25px rgba(255,255,220,.8),
+        0 0 50px rgba(255,255,220,.5),
+        0 0 90px rgba(255,255,220,.3);
+    z-index:-2;
+    pointer-events:none;
+}
+body::after{
+    content:"";
+    position:fixed;
+    top:40px;
+    left:35px;
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    background:
+        radial-gradient(circle at 35% 35%, rgba(210,210,210,.5) 4px, transparent 5px),
+        radial-gradient(circle at 65% 55%, rgba(210,210,210,.35) 6px, transparent 7px),
+        radial-gradient(circle at 45% 70%, rgba(210,210,210,.4) 5px, transparent 6px),
+        radial-gradient(circle at center, #fff, #f5f5dc 70%);
+    box-shadow:
+        0 0 30px rgba(255,255,220,.8),
+        0 0 70px rgba(255,255,220,.4);
+    z-index:-2;
+    pointer-events:none;
+}
+/* ✨ Celebrate Card */
+
+.celebrate-card{
+    max-width:600px;
+    margin:40px auto;
+    padding:30px;
+    border-radius:20px;
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    color:white;
+    text-align:center;
+
+    animation:fadeCard 2s ease;
+}
+
+.celebrate-card h2{
+    color:#ffd166;
+    margin-bottom:15px;
+}
+
+.celebrate-card p{
+    line-height:1.8;
+}
+
+.small-text{
+    margin-top:20px;
+    opacity:.8;
+    font-style:italic;
+}
+
+@keyframes fadeCard{
+
+from{
+    opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* Final Button Glow */
+
+#finalMessageBtn{
+
+animation:pulseGlow 2s infinite;
+
+}
+
+@keyframes pulseGlow{
+
+0%{
+box-shadow:0 0 5px #ff4f81;
+}
+
+50%{
+box-shadow:0 0 25px #ff4f81;
+}
+
+100%{
+box-shadow:0 0 5px #ff4f81;
+}
+
+}
+/* ===== Celebrate Premium Card ===== */
+
+.celebrate-card{
+    width:90%;
+    max-width:650px;
+    margin:50px auto;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(14px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    text-align:center;
+
+    color:white;
+
+    animation:cardAppear 1.5s ease;
+}
+
+.celebrate-card h2{
+    color:#ffd166;
+    margin-bottom:20px;
+    font-size:30px;
+}
+
+.quote{
+    font-size:22px;
+    line-height:1.8;
+    font-style:italic;
+}
+
+.divider{
+    font-size:22px;
+    color:#ffd166;
+    margin:25px 0;
+}
+
+.message{
+    font-size:18px;
+    line-height:1.9;
+    opacity:.95;
+}
+
+.scroll-text{
+    margin-top:30px;
+    color:#ffb3c6;
+    animation:blinkGlow 2s infinite;
+}
+
+@keyframes cardAppear{
+
+from{
+opacity:0;
+transform:translateY(50px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+@keyframes blinkGlow{
+
+0%,100%{
+opacity:.5;
+}
+
+50%{
+opacity:1;
+text-shadow:0 0 18px #ff6fa5;
+}
+
+}
+
+/* Final Button Glow */
+
+#finalMessageBtn{
+
+animation:finalGlow 2s infinite;
+
+}
+
+@keyframes finalGlow{
+
+0%{
+transform:scale(1);
+box-shadow:0 0 5px #ff4f81;
+}
+
+50%{
+transform:scale(1.05);
+box-shadow:0 0 25px #ff4f81;
+}
+
+100%{
+transform:scale(1);
+box-shadow:0 0 5px #ff4f81;
+}
+
+}
+/* 🌸 Final Birthday Wish - Responsive */
+
+.birthday-again{
+    margin-top:35px;
+    padding:0 15px;
+    width:100%;
+    text-align:center;
+
+    font-family:'Great Vibes',cursive;
+    font-size:clamp(1.7rem, 6vw, 2.5rem);
+
+    color:#ffd6e7;
+    text-shadow:0 0 12px rgba(255,255,255,.6);
+
+    animation:birthdayGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes birthdayGlow{
+    from{
+        transform:scale(1);
+        text-shadow:0 0 8px rgba(255,255,255,.4);
+    }
+
+    to{
+        transform:scale(1.04);
+        text-shadow:0 0 20px rgba(255,120,170,.9);
+    }
+}
+
+/* 📱 Small Mobile Screens */
+
+@media (max-width:480px){
+
+    .birthday-again{
+        margin-top:28px;
+        padding:0 10px;
+        font-size:1.8rem;
+        line-height:1.4;
+    }
+
+}
+/* 💖 Premium Final Message Card - Mobile Responsive */
+
+.final-card{
+    width:90%;
+    max-width:700px;
+    padding:35px 30px;
+    
+    background:rgba(255,255,255,0.10);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.20);
+    border-radius:28px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.25),
+        inset 0 1px 1px rgba(255,255,255,0.25);
+
+    text-align:center;
+}
+
+/* 💖 Final Heading */
+
+.final-card h1{
+    font-family:'Great Vibes',cursive;
+    font-size:clamp(2.2rem,8vw,3.5rem);
+    color:#fff;
+    text-shadow:0 0 15px rgba(255,150,190,0.8);
+    margin-bottom:25px;
+}
+
+/* 📝 Final Message */
+
+.final-card p{
+    font-size:clamp(15px,4vw,18px);
+    line-height:2;
+    color:#fff;
+    text-align:center;
+    white-space:pre-line;
+}
+
+/* 🌸 Birthday Ending */
+
+.birthday-again{
+    margin-top:35px;
+    padding:0 10px;
+
+    font-family:'Great Vibes',cursive;
+    font-size:clamp(1.7rem,6vw,2.5rem);
+
+    color:#ffd6e7;
+    text-shadow:0 0 12px rgba(255,255,255,.6);
+
+    animation:birthdayGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes birthdayGlow{
+
+    from{
+        transform:scale(1);
+        text-shadow:0 0 8px rgba(255,255,255,.4);
+    }
+
+    to{
+        transform:scale(1.04);
+        text-shadow:0 0 20px rgba(255,120,170,.9);
+    }
+
+}
+
+/* 📱 Extra Small Phones */
+
+@media (max-width:480px){
+
+    .final-card{
+        width:92%;
+        padding:28px 18px;
+        border-radius:22px;
+    }
+
+    .final-card p{
+        font-size:15px;
+        line-height:1.85;
+    }
+
+    .birthday-again{
+        margin-top:28px;
+        font-size:1.8rem;
+        line-height:1.4;
+    }
+
+}
+/* ✨ Final Message Cinematic Entrance */
+
+.final-card{
+    animation: finalCardReveal 1.2s ease-out both;
+}
+
+@keyframes finalCardReveal{
+    0%{
+        opacity:0;
+        transform:translateY(40px) scale(.96);
+        filter:blur(8px);
+    }
+
+    100%{
+        opacity:1;
+        transform:translateY(0) scale(1);
+        filter:blur(0);
+    }
+}
+
+/* 💖 Final Heading Glow */
+
+.final-card h1{
+    animation: finalTitleGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes finalTitleGlow{
+    from{
+        text-shadow:
+            0 0 8px rgba(255,255,255,.4),
+            0 0 15px rgba(255,100,160,.3);
+    }
+
+    to{
+        text-shadow:
+            0 0 15px rgba(255,255,255,.8),
+            0 0 35px rgba(255,100,160,.7);
+    }
+}
+
+/* 📱 Mobile Adjustment */
+
+@media (max-width:480px){
+
+    .final-card{
+        animation-duration:1s;
+    }
+
+}
+/* 💖 Premium Made By Signature */
+
+.made-by{
+    margin-top:30px;
+    padding:0 10px;
+
+    font-family:'Poppins',sans-serif;
+    font-size:clamp(14px,4vw,18px);
+    font-weight:600;
+
+    color:#ffd6e7;
+
+    text-align:center;
+    line-height:1.6;
+
+    opacity:0;
+    transform:translateY(25px);
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,.4),
+        0 0 18px rgba(255,100,160,.3);
+
+    transition:
+        opacity 1.5s ease,
+        transform 1.5s ease;
+}
+
+.made-by.show{
+    opacity:1;
+    transform:translateY(0);
+
+    animation:signatureGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes signatureGlow{
+
+    from{
+        text-shadow:
+            0 0 8px rgba(255,255,255,.4),
+            0 0 15px rgba(255,100,160,.3);
+    }
+
+    to{
+        text-shadow:
+            0 0 12px rgba(255,255,255,.7),
+            0 0 25px rgba(255,100,160,.6);
+    }
+
+}
+
+/* 📱 Mobile */
+
+@media (max-width:480px){
+
+    .made-by{
+        margin-top:25px;
+        padding:0 15px;
+        font-size:14px;
+        line-height:1.7;
+    }
+
+}
+/* 📖 Final Message - Better Reading Experience */
+
+.final-card p{
+    max-width:620px;
+    margin:0 auto;
+    letter-spacing:.2px;
+    word-spacing:2px;
+}
+
+/* 🌸 Better spacing before signature */
+
+.final-card .made-by{
+    margin-top:35px;
+}
+
+/* 📱 Mobile Reading */
+
+@media (max-width:480px){
+
+    .final-card p{
+        max-width:100%;
+        padding:0 3px;
+        font-size:15px;
+        line-height:1.9;
+        letter-spacing:.1px;
+        word-spacing:1px;
+    }
+
+    .final-card .made-by{
+        margin-top:28px;
+    }
+
+}
+/* 💌 Premium Letter Card */
+
+.letter-card{
+    width:90%;
+    max-width:700px;
+    padding:40px 35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.16),
+            rgba(255,182,193,0.08)
+        );
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:28px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.25),
+        0 0 35px rgba(255,120,170,0.18),
+        inset 0 1px 1px rgba(255,255,255,0.25);
+
+    text-align:center;
+
+    animation:letterReveal 1.2s ease-out both;
+}
+
+/* 💖 Letter Heading */
+
+.letter-card h2{
+    font-family:'Great Vibes',cursive;
+    font-size:clamp(2.2rem,8vw,3.2rem);
+
+    color:#fff;
+
+    margin-bottom:28px;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,.5),
+        0 0 25px rgba(255,100,160,.4);
+}
+
+/* 📝 Letter Text */
+
+.letter-card p{
+    font-size:clamp(15px,4vw,18px);
+    line-height:2;
+
+    color:#fff;
+
+    white-space:pre-line;
+}
+
+/* ✨ Letter Opening Animation */
+
+@keyframes letterReveal{
+
+    0%{
+        opacity:0;
+        transform:translateY(40px) scale(.96);
+        filter:blur(8px);
+    }
+
+    100%{
+        opacity:1;
+        transform:translateY(0) scale(1);
+        filter:blur(0);
+    }
+
+}
+
+/* 📱 Mobile Responsive */
+
+@media (max-width:480px){
+
+    .letter-card{
+        width:92%;
+        padding:30px 20px;
+        border-radius:22px;
+    }
+
+    .letter-card h2{
+        font-size:2.3rem;
+        margin-bottom:22px;
+    }
+
+    .letter-card p{
+        font-size:15px;
+        line-height:1.85;
+    }
+
+}
+/* ✍️ Handwritten Letter Feel */
+
+.letter-card p{
+    font-family:'Great Vibes', cursive;
+    font-size:clamp(1.35rem, 5vw, 1.8rem);
+    line-height:1.9;
+    letter-spacing:.3px;
+
+    color:#fff5fa;
+
+    text-shadow:
+        0 1px 3px rgba(0,0,0,.15);
+
+    text-align:left;
+}
+
+/* 💌 Dear Shikha Letter Spacing */
+
+.letter-card{
+    text-align:center;
+}
+
+/* 📱 Mobile Responsive */
+
+@media (max-width:480px){
+
+    .letter-card p{
+        font-size:1.35rem;
+        line-height:1.8;
+        text-align:left;
+    }
+
+}
+/* 💌 REAL LETTER PAPER DESIGN */
+
+.letter-card{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    padding:25px;
+    border-radius:25px;
+}
+
+/* 📜 Actual Paper */
+
+.letter-card p{
+    position:relative;
+
+    width:100%;
+    max-width:620px;
+
+    margin:0 auto;
+
+    padding:45px 40px;
+
+    background:
+        linear-gradient(
+            rgba(255,250,235,0.96),
+            rgba(255,244,220,0.96)
+        );
+
+    color:#5b3a42;
+
+    border-radius:5px;
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,0.25),
+        inset 0 0 30px rgba(190,150,100,0.12);
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:clamp(1.35rem,5vw,1.8rem);
+
+    line-height:1.9;
+
+    text-align:left;
+
+    text-shadow:none;
+
+    border-left:4px solid rgba(200,150,120,0.35);
+
+    transform:rotate(-0.5deg);
+
+    animation:paperAppear 1.2s ease-out both;
+}
+
+/* 📜 Paper Lines */
+
+.letter-card p{
+    background-color:#fff8e8;
+
+    background-image:
+        linear-gradient(
+            transparent 95%,
+            rgba(150,120,100,0.15) 96%
+        );
+
+    background-size:100% 38px;
+}
+
+/* ✨ Paper Reveal */
+
+@keyframes paperAppear{
+
+    from{
+        opacity:0;
+        transform:translateY(30px) rotate(-2deg);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) rotate(-0.5deg);
+    }
+
+}
+
+/* 📱 Mobile */
+
+@media(max-width:480px){
+
+    .letter-card{
+        width:94%;
+        padding:18px;
+    }
+
+    .letter-card p{
+        padding:35px 22px;
+
+        font-size:1.3rem;
+
+        line-height:1.85;
+
+        background-size:100% 34px;
+    }
+
+}
+/* 📜 Perfectly Aligned Letter Lines */
+
+.letter-card p{
+    line-height:2;
+    padding:45px 40px;
+
+    background-color:#fff8e8;
+
+    background-image:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent calc(2em - 1px),
+            rgba(120,90,80,0.18) 2em
+        );
+
+    background-size:100% auto;
+
+    background-position:0 0;
+}
+
+/* 📱 Mobile - Perfect Line Alignment */
+
+@media(max-width:480px){
+
+    .letter-card p{
+        padding:35px 22px;
+
+        font-size:1.3rem;
+        line-height:2;
+
+        background-image:
+            repeating-linear-gradient(
+                to bottom,
+                transparent 0,
+                transparent calc(2em - 1px),
+                rgba(120,90,80,0.18) 2em
+            );
+    }
+
+}
+/* ✨ PREMIUM GLASS BUTTONS */
+
+button,
+.btn{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    min-height:52px;
+    padding:14px 28px;
+
+    border:1px solid rgba(255,255,255,.45);
+    border-radius:50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.28),
+            rgba(255,105,155,.18)
+        );
+
+    color:#fff;
+
+    font-family:'Poppins',sans-serif;
+    font-size:16px;
+    font-weight:600;
+
+    letter-spacing:.3px;
+
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.22),
+        inset 0 1px 1px rgba(255,255,255,.35);
+
+    cursor:pointer;
+    overflow:hidden;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+}
+
+/* ✨ Moving Shine */
+
+button::before,
+.btn::before{
+    content:"";
+
+    position:absolute;
+    top:0;
+    left:-120%;
+
+    width:70%;
+    height:100%;
+
+    background:linear-gradient(
+        100deg,
+        transparent,
+        rgba(255,255,255,.45),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+
+    transition:left .7s ease;
+
+    pointer-events:none;
+}
+
+/* 🖱️ Hover */
+
+button:hover,
+.btn:hover{
+    transform:translateY(-3px) scale(1.03);
+
+    border-color:rgba(255,255,255,.8);
+
+    box-shadow:
+        0 12px 35px rgba(255,80,145,.3),
+        0 0 20px rgba(255,120,180,.25),
+        inset 0 1px 2px rgba(255,255,255,.5);
+}
+
+button:hover::before,
+.btn:hover::before{
+    left:130%;
+}
+
+/* 💖 Click */
+
+button:active,
+.btn:active{
+    transform:scale(.95);
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.2);
+}
+
+/* 📱 Mobile */
+
+@media(max-width:480px){
+
+    button,
+    .btn{
+        width:90%;
+        max-width:320px;
+
+        min-height:50px;
+        padding:13px 20px;
+
+        font-size:15px;
+    }
+
+}
+/* =================================
+   💎 PREMIUM LUXURY BUTTONS
+================================= */
+
+button,
+.btn{
+    position:relative;
+    overflow:hidden;
+
+    margin-top:35px;
+    padding:14px 30px;
+
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:50px;
+
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+
+    color:#fff;
+    font-family:'Poppins',sans-serif;
+    font-size:16px;
+    font-weight:600;
+    letter-spacing:.5px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.25),
+        inset 0 1px 1px rgba(255,255,255,.25);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        background .35s ease;
+}
+
+/* ✨ Moving Shine Effect */
+
+button::before,
+.btn::before{
+    content:"";
+
+    position:absolute;
+    top:0;
+    left:-120%;
+
+    width:80%;
+    height:100%;
+
+    background:linear-gradient(
+        110deg,
+        transparent,
+        rgba(255,255,255,.5),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+
+    transition:left .7s ease;
+}
+
+/* Hover */
+
+button:hover,
+.btn:hover{
+
+    transform:translateY(-4px) scale(1.03);
+
+    background:rgba(255,255,255,.2);
+
+    box-shadow:
+        0 12px 35px rgba(255,79,129,.35),
+        0 0 20px rgba(255,255,255,.15),
+        inset 0 1px 2px rgba(255,255,255,.35);
+}
+
+button:hover::before,
+.btn:hover::before{
+    left:130%;
+}
+
+/* Click */
+
+button:active,
+.btn:active{
+    transform:translateY(0) scale(.96);
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.25);
+}
+
+/* =================================
+   🌸 SPECIAL GLOW FOR MAIN BUTTONS
+================================= */
+
+#giftBtn,
+#openLetterBtn,
+#galleryBtn,
+#celebrateBtn,
+#finalMessageBtn,
+#replayBtn{
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.2),
+            rgba(255,79,129,.25)
+        );
+
+    box-shadow:
+        0 8px 25px rgba(255,79,129,.25),
+        inset 0 1px 2px rgba(255,255,255,.3);
+
+}
+
+/* =================================
+   📱 MOBILE RESPONSIVE
+================================= */
+
+@media(max-width:600px){
+
+    button,
+    .btn{
+
+        padding:13px 24px;
+
+        font-size:14px;
+
+        width:auto;
+        max-width:90%;
+
+        letter-spacing:.3px;
+    }
+
+    button:hover,
+    .btn:hover{
+
+        transform:translateY(-2px) scale(1.02);
+
+    }
+
+}
+/* ✨ Compact Every Memory Has A Story Card */
+
+.celebrate-card h2{
+    font-size:24px;
+    line-height:1.4;
+}
+
+.celebrate-card{
+    padding:25px 22px;
+    max-width:600px;
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    .celebrate-card{
+        width:88%;
+        padding:22px 18px;
+        margin:30px auto;
+    }
+
+    .celebrate-card h2{
+        font-size:20px;
+        line-height:1.4;
+    }
+
+    .celebrate-card .quote{
+        font-size:17px;
+        line-height:1.7;
+    }
+
+    .celebrate-card .message{
+        font-size:15px;
+        line-height:1.7;
+    }
+
+}
+/* =========================================
+   🎬 PREMIUM CELEBRATION SECTION
+========================================= */
+
+#celebrationSection{
+    position:relative;
+    min-height:100vh;
+    padding:70px 20px;
+    overflow:hidden;
+}
+
+/* ✨ Soft cinematic glow */
+
+#celebrationSection::before{
+    content:"";
+    position:absolute;
+    width:280px;
+    height:280px;
+    top:10%;
+    left:50%;
+    transform:translateX(-50%);
+
+    background:radial-gradient(
+        circle,
+        rgba(255,105,160,.22),
+        transparent 70%
+    );
+
+    filter:blur(20px);
+    pointer-events:none;
+}
+
+/* 🎉 Main Celebration Content */
+
+.celebration-content{
+    position:relative;
+    z-index:2;
+    width:100%;
+    max-width:700px;
+    margin:auto;
+}
+
+/* 🎂 Birthday Heading */
+
+.celebration-content > h1{
+    font-family:'Great Vibes',cursive;
+    font-size:clamp(42px,10vw,72px);
+    line-height:1.2;
+    margin-bottom:10px;
+
+    background:linear-gradient(
+        90deg,
+        #fff,
+        #ffd6e7,
+        #fff
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+        0 0 20px rgba(255,255,255,.25);
+
+    animation:titleGlow 3s ease-in-out infinite;
+}
+
+@keyframes titleGlow{
+    0%,100%{
+        filter:brightness(1);
+    }
+    50%{
+        filter:brightness(1.3);
+    }
+}
+
+/* 🎂 Premium Cake */
+
+.cake{
+    font-size:clamp(65px,18vw,110px);
+    margin:15px 0 25px;
+
+    filter:
+        drop-shadow(0 0 15px rgba(255,255,255,.25));
+
+    animation:
+        premiumCake 3s ease-in-out infinite;
+}
+
+@keyframes premiumCake{
+    0%,100%{
+        transform:translateY(0) scale(1);
+    }
+
+    50%{
+        transform:translateY(-10px) scale(1.04);
+    }
+}
+
+/* 💖 Intro Birthday Message */
+
+.celebration-content > p{
+    max-width:550px;
+    margin:0 auto 35px;
+
+    font-size:16px;
+    line-height:1.9;
+    color:rgba(255,255,255,.9);
+}
+
+/* 💎 Premium Cards */
+
+.celebrate-card{
+    position:relative;
+    width:100%;
+    max-width:620px;
+
+    margin:30px auto;
+    padding:28px 22px;
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.12),
+            rgba(255,255,255,.04)
+        );
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.25),
+        inset 0 1px 1px rgba(255,255,255,.18);
+
+    overflow:hidden;
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+/* ✨ Card Shine */
+
+.celebrate-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+
+    width:70%;
+    height:100%;
+
+    background:linear-gradient(
+        110deg,
+        transparent,
+        rgba(255,255,255,.08),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+
+    animation:cardShine 6s ease-in-out infinite;
+}
+
+@keyframes cardShine{
+    0%,60%{
+        left:-100%;
+    }
+
+    80%,100%{
+        left:130%;
+    }
+}
+
+/* ✨ Card Heading */
+
+.celebrate-card h2{
+    position:relative;
+    z-index:1;
+
+    font-size:22px;
+    line-height:1.5;
+
+    color:#ffe1ec;
+
+    text-shadow:
+        0 0 15px rgba(255,105,160,.35);
+}
+
+/* 📖 Card Text */
+
+.celebrate-card p{
+    position:relative;
+    z-index:1;
+
+    font-size:16px;
+    line-height:1.8;
+}
+
+/* 💫 Quote */
+
+.celebrate-card .quote{
+    font-size:17px;
+    line-height:1.8;
+    color:rgba(255,255,255,.9);
+}
+
+/* ✦ Divider */
+
+.divider{
+    margin:22px 0;
+    letter-spacing:8px;
+
+    color:#ffd6e7;
+
+    text-shadow:
+        0 0 12px rgba(255,105,160,.7);
+}
+
+/* 🌸 Scroll Text */
+
+.scroll-text{
+    font-size:14px !important;
+    letter-spacing:.5px;
+
+    color:#ffd6e7;
+
+    animation:scrollGlow 2s ease-in-out infinite;
+}
+
+@keyframes scrollGlow{
+    0%,100%{
+        opacity:.55;
+    }
+
+    50%{
+        opacity:1;
+        text-shadow:
+            0 0 15px rgba(255,105,160,.8);
+    }
+}
+
+/* 📱 Mobile Premium Adjustment */
+
+@media(max-width:600px){
+
+    #celebrationSection{
+        padding:55px 16px;
+    }
+
+    .celebration-content > h1{
+        font-size:48px;
+    }
+
+    .celebration-content > p{
+        font-size:14px;
+        line-height:1.8;
+        padding:0 8px;
+    }
+
+    .celebrate-card{
+        width:94%;
+        padding:24px 18px;
+        margin:25px auto;
+        border-radius:22px;
+    }
+
+    .celebrate-card h2{
+        font-size:20px;
+    }
+
+    .celebrate-card .quote{
+        font-size:15px;
+        line-height:1.75;
+    }
+
+    .celebrate-card .message{
+        font-size:14px;
+        line-height:1.75;
+    }
+
+}
+/* =================================
+   🎉 PREMIUM HAPPY BIRTHDAY TITLE
+================================= */
+
+.celebration-content > h1{
+    position:relative;
+
+    font-family:'Great Vibes',cursive;
+    font-size:clamp(52px,13vw,82px);
+    font-weight:400;
+
+    margin:0 0 5px;
+
+    background:linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #ffd6e7 25%,
+        #ffffff 50%,
+        #ffb6d1 75%,
+        #ffffff 100%
+    );
+
+    background-size:200% auto;
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:
+        birthdayShimmer 4s linear infinite,
+        birthdayGlow 2.5s ease-in-out infinite;
+
+    filter:drop-shadow(
+        0 5px 15px rgba(255,79,129,.25)
+    );
+}
+
+/* ✨ Moving Luxury Shine */
+
+@keyframes birthdayShimmer{
+
+    0%{
+        background-position:200% center;
+    }
+
+    100%{
+        background-position:-200% center;
+    }
+
+}
+
+/* 💖 Soft Glow */
+
+@keyframes birthdayGlow{
+
+    0%,100%{
+        filter:drop-shadow(
+            0 5px 12px rgba(255,79,129,.2)
+        );
+    }
+
+    50%{
+        filter:drop-shadow(
+            0 5px 25px rgba(255,105,160,.55)
+        );
+    }
+
+}
+
+/* ✦ Elegant Decorative Line */
+
+.celebration-content > h1::after{
+
+    content:"✦  ✧  ✦";
+
+    display:block;
+
+    margin-top:-5px;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:14px;
+
+    letter-spacing:7px;
+
+    color:#ffd6e7;
+
+    -webkit-text-fill-color:#ffd6e7;
+
+    opacity:.8;
+
+    animation:decorGlow 2s ease-in-out infinite;
+
+}
+
+@keyframes decorGlow{
+
+    0%,100%{
+        opacity:.5;
+    }
+
+    50%{
+        opacity:1;
+        text-shadow:
+            0 0 12px rgba(255,105,160,.8);
+    }
+
+}
+
+/* 📱 Mobile */
+
+@media(max-width:600px){
+
+    .celebration-content > h1{
+
+        font-size:52px;
+
+        line-height:1.15;
+
+        margin-bottom:5px;
+
+    }
+
+    .celebration-content > h1::after{
+
+        font-size:11px;
+
+        letter-spacing:5px;
+
+        margin-top:2px;
+
+    }
+
+}
+/* =================================
+   🎂 PREMIUM BIRTHDAY CAKE
+================================= */
+
+.cake{
+    position:relative;
+    display:inline-block;
+
+    font-size:clamp(75px,20vw,115px);
+
+    margin:15px 0 25px;
+
+    filter:
+        drop-shadow(0 0 8px rgba(255,255,255,.35))
+        drop-shadow(0 0 25px rgba(255,105,160,.35));
+
+    animation:
+        premiumCakeFloat 3s ease-in-out infinite,
+        cakeGlow 2s ease-in-out infinite;
+}
+
+/* 🎂 Gentle Floating */
+
+@keyframes premiumCakeFloat{
+
+    0%,100%{
+        transform:translateY(0) rotate(-2deg);
+    }
+
+    50%{
+        transform:translateY(-12px) rotate(2deg);
+    }
+
+}
+
+/* ✨ Soft Birthday Glow */
+
+@keyframes cakeGlow{
+
+    0%,100%{
+        filter:
+            drop-shadow(0 0 8px rgba(255,255,255,.3))
+            drop-shadow(0 0 18px rgba(255,105,160,.25));
+    }
+
+    50%{
+        filter:
+            drop-shadow(0 0 12px rgba(255,255,255,.6))
+            drop-shadow(0 0 35px rgba(255,105,160,.55));
+    }
+
+}
+
+/* 📱 Mobile */
+
+@media(max-width:600px){
+
+    .cake{
+        font-size:80px;
+        margin:12px 0 22px;
+    }
+
+}
+
+/* 📱 Mobile Adjustment */
+
+@media(max-width:600px){
+
+    .cake-top::before{
+        font-size:13px;
+    }
+
+}
+/* Hide CSS Cake - Realistic Cake Coming */
+.cake-realistic{
+    display:none !important;
+}
+/* ===== Realistic Birthday Cake ===== */
+
+.realistic-cake{
+    position:relative;
+    width:min(85vw, 420px);
+    margin:25px auto 35px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    animation:cakeFloat 3s ease-in-out infinite;
+}
+
+.realistic-cake img{
+    display:block;
+    width:100%;
+    max-width:420px;
+    height:auto;
+    object-fit:contain;
+    filter:
+        drop-shadow(0 20px 25px rgba(0,0,0,.35))
+        drop-shadow(0 0 18px rgba(255,180,210,.25));
+}
+
+/* Candle flames */
+
+.cake-flames{
+    position:absolute;
+    top:2%;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:clamp(15px,5vw,35px);
+    pointer-events:none;
+}
+
+.cake-flames span{
+    font-size:clamp(18px,5vw,30px);
+    filter:
+        drop-shadow(0 0 5px #ffd166)
+        drop-shadow(0 0 12px #ff8c00);
+    animation:flameFlicker .7s ease-in-out infinite alternate;
+}
+
+.cake-flames span:nth-child(2){
+    animation-delay:.2s;
+}
+
+.cake-flames span:nth-child(3){
+    animation-delay:.4s;
+}
+
+@keyframes flameFlicker{
+    from{
+        transform:scale(1) rotate(-3deg);
+        opacity:.85;
+    }
+
+    to{
+        transform:scale(1.18) rotate(3deg);
+        opacity:1;
+    }
+}
+
+@keyframes cakeFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    .realistic-cake{
+        width:82vw;
+        max-width:340px;
+        margin:20px auto 30px;
+    }
+
+    .cake-flames{
+        gap:15px;
+    }
+}
+
+/* Soft magical glow behind cake */
+
+.realistic-cake::before{
+    content:"";
+    position:absolute;
+    width:75%;
+    height:65%;
+    background:rgba(255,100,170,.18);
+    filter:blur(45px);
+    border-radius:50%;
+    z-index:-1;
+}
+
+/* Candle flame positioning */
+
+.cake-flames{
+    position:absolute;
+    top:3%;
+    left:50%;
+    transform:translateX(-50%);
+
+    display:flex;
+    justify-content:center;
+    gap:clamp(12px,4vw,28px);
+
+    pointer-events:none;
+}
+
+.cake-flames span{
+    font-size:clamp(16px,4vw,25px);
+
+    filter:
+        drop-shadow(0 0 5px #ffd166)
+        drop-shadow(0 0 12px #ff8c00);
+
+    animation:flameFlicker .8s ease-in-out infinite alternate;
+}
+
+.cake-flames span:nth-child(2){
+    animation-delay:.2s;
+}
+
+.cake-flames span:nth-child(3){
+    animation-delay:.4s;
+}
+
+/* Candle Flame Animation */
+
+@keyframes flameFlicker{
+
+    0%{
+        transform:scale(1) rotate(-3deg);
+        opacity:.8;
+    }
+
+    100%{
+        transform:scale(1.15) rotate(3deg);
+        opacity:1;
+    }
+
+}
+
+/* Very subtle floating effect */
+
+@keyframes cakeFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-5px);
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    .realistic-cake{
+        width:75vw;
+        max-width:300px;
+                margin:5px auto 20px;
+    }
+
+    .cake-flames{
+        gap:12px;
+    }
+
+}
+/* =================================
+   🎂 PREMIUM BIRTHDAY CAKE
+================================= */
+
+.cake{
+    font-size:100px;
+    margin:0 0 20px;
+    animation:floatCake 2s infinite;
+}
+/* Premium Happy Birthday Color */
+
+.celebration-content > h1{
+    color:#ffd166;
+    -webkit-text-fill-color:#ffd166;
+
+    text-shadow:
+        0 0 8px rgba(255,209,102,.7),
+        0 0 20px rgba(255,105,180,.5),
+        0 0 35px rgba(255,209,102,.3);
+}
+/* ===== Remove Blue Tap Highlight ===== */
+
+button,
+.btn{
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+button:focus,
+button:focus-visible,
+.btn:focus,
+.btn:focus-visible{
+    outline: none;
+}
+/* ===== Premium Gallery Photos ===== */
+
+.gallery img{
+    border:1px solid rgba(255,255,255,.25);
+    background:rgba(255,255,255,.08);
+    padding:5px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.35),
+        0 0 15px rgba(255,180,210,.12);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        filter .35s ease;
+}
+
+/* Desktop Hover */
+
+@media (hover:hover){
+
+    .gallery img:hover{
+        transform:translateY(-8px) scale(1.03);
+
+        box-shadow:
+            0 15px 35px rgba(0,0,0,.4),
+            0 0 25px rgba(255,150,200,.35);
+
+        filter:brightness(1.08);
+    }
+
+}
+
+/* Mobile Tap */
+
+.gallery img:active{
+    transform:scale(.96);
+}
+/* ===== Premium Gallery Heading ===== */
+
+#gallerySection > h2{
+    font-family:'Great Vibes',cursive;
+    font-size:clamp(2rem, 7vw, 3.2rem);
+    font-weight:400;
+    color:#ffd6e7;
+    text-align:center;
+    line-height:1.3;
+    margin-bottom:5px;
+
+    text-shadow:
+        0 0 8px rgba(255,180,210,.6),
+        0 0 20px rgba(255,105,180,.3);
+
+    animation:galleryTitleGlow 3s ease-in-out infinite;
+}
+
+@keyframes galleryTitleGlow{
+
+    0%,100%{
+        text-shadow:
+            0 0 8px rgba(255,180,210,.5),
+            0 0 20px rgba(255,105,180,.2);
+    }
+
+    50%{
+        text-shadow:
+            0 0 12px rgba(255,220,235,.8),
+            0 0 30px rgba(255,105,180,.5);
+    }
+
+}
+/* ===== Premium 20-Photo Memory Album ===== */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:10px;
+    width:100%;
+    max-width:900px;
+    margin:25px auto 0;
+}
+
+.gallery img{
+    width:100%;
+    aspect-ratio:1 / 1;
+    object-fit:cover;
+    border-radius:12px;
+    padding:3px;
+
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.25),
+        0 0 10px rgba(255,180,210,.12);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+/* Desktop hover */
+
+@media (hover:hover){
+
+    .gallery img:hover{
+        transform:scale(1.05);
+        box-shadow:
+            0 8px 20px rgba(0,0,0,.35),
+            0 0 18px rgba(255,150,200,.3);
+    }
+
+}
+
+/* Phone */
+
+@media(max-width:600px){
+
+    .gallery{
+        grid-template-columns:repeat(3, 1fr);
+        gap:7px;
+        width:94%;
+    }
+
+    .gallery img{
+        border-radius:9px;
+        padding:2px;
+    }
+
+}
+/* ===== Premium Memory Album / Polaroid Feel ===== */
+
+.gallery img{
+    background:rgba(255,255,255,.92);
+    padding:6px;
+    border-radius:6px;
+
+    box-shadow:
+        0 8px 18px rgba(0,0,0,.28),
+        0 0 12px rgba(255,180,210,.15);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+/* Polaroid-style random tilt */
+
+.gallery img:nth-child(3n){
+    transform:rotate(1.5deg);
+}
+
+.gallery img:nth-child(3n+1){
+    transform:rotate(-1.5deg);
+}
+
+.gallery img:nth-child(3n+2){
+    transform:rotate(.8deg);
+}
+
+/* Hover */
+
+@media (hover:hover){
+
+    .gallery img:hover{
+        transform:scale(1.08) rotate(0deg);
+        z-index:5;
+
+        box-shadow:
+            0 15px 30px rgba(0,0,0,.4),
+            0 0 25px rgba(255,150,200,.35);
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    .gallery img{
+        padding:4px;
+        border-radius:5px;
+    }
+
+    .gallery img:active{
+        transform:scale(.96) rotate(0deg);
+    }
+
+}
+/* ===== Premium Scroll Reveal for Memories ===== */
+
+.gallery img{
+    opacity:0;
+    transform:translateY(35px) scale(.96);
+    transition:
+        opacity .7s ease,
+        transform .7s ease,
+        box-shadow .4s ease;
+}
+
+/* Photo visible hone par */
+
+.gallery img.show-photo{
+    opacity:1;
+    transform:translateY(0) scale(1);
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    .gallery img{
+        transform:translateY(25px) scale(.97);
+    }
+
+    .gallery img.show-photo{
+        transform:translateY(0) scale(1);
+    }
+
+}
+/* =================================
+   Premium Fullscreen Photo Viewer
+================================= */
+
+#imageModal{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(10,5,15,.92);
+    backdrop-filter:blur(12px);
+
+    padding:20px;
+}
+
+/* Fullscreen Image */
+
+#fullImage{
+    max-width:85%;
+    max-height:82vh;
+
+    object-fit:contain;
+
+    border-radius:14px;
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.6),
+        0 0 30px rgba(255,150,200,.2);
+
+    animation:photoZoom .35s ease;
+}
+
+@keyframes photoZoom{
+
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+/* Close Button */
+
+#closeImage{
+    position:absolute;
+    top:25px;
+    right:25px;
+
+    width:45px;
+    height:45px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(10px);
+
+    color:white;
+    font-size:28px;
+
+    cursor:pointer;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    transition:.3s;
+}
+
+#closeImage:hover{
+    transform:rotate(90deg) scale(1.1);
+    background:rgba(255,255,255,.22);
+}
+
+/* Previous & Next Buttons */
+
+#prevImage,
+#nextImage{
+
+    position:absolute;
+
+    top:50%;
+    transform:translateY(-50%);
+
+    width:48px;
+    height:48px;
+
+    border:none;
+    border-radius:50%;
+
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(10px);
+
+    color:white;
+    font-size:24px;
+
+    cursor:pointer;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    transition:.3s;
+}
+
+#prevImage{
+    left:25px;
+}
+
+#nextImage{
+    right:25px;
+}
+
+#prevImage:hover,
+#nextImage:hover{
+
+    background:rgba(255,255,255,.25);
+
+    transform:
+        translateY(-50%)
+        scale(1.1);
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    #fullImage{
+        max-width:92%;
+        max-height:75vh;
+    }
+
+    #prevImage,
+    #nextImage{
+
+        width:42px;
+        height:42px;
+
+        font-size:20px;
+    }
+
+    #prevImage{
+        left:10px;
+    }
+
+    #nextImage{
+        right:10px;
+    }
+
+    #closeImage{
+        top:15px;
+        right:15px;
+
+        width:40px;
+        height:40px;
+
+        font-size:24px;
+    }
+
+}
+/* Hide Photo Viewer at startup */
+
+#imageModal{
+    display:none;
+}
+/* =================================
+   🎂 Premium Birthday Age Counter
+================================= */
+
+#ageCounter{
+    margin:25px auto 10px;
+    width:90%;
+    max-width:520px;
+    text-align:center;
+
+    padding:18px 15px;
+
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:20px;
+
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.18),
+        0 0 25px rgba(255,150,200,.15);
+}
+
+/* Main Age */
+
+.age-main{
+    font-size:28px;
+    font-weight:600;
+    letter-spacing:1px;
+
+    color:#fff;
+
+    text-shadow:
+        0 0 12px rgba(255,180,220,.5);
+
+    margin-bottom:14px;
+}
+
+/* Details */
+
+.age-details{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.age-details span{
+    padding:8px 12px;
+
+    font-size:13px;
+    color:rgba(255,255,255,.85);
+
+    background:rgba(255,255,255,.07);
+
+    border-radius:12px;
+
+    border:1px solid rgba(255,255,255,.12);
+}
+
+.age-details strong{
+    color:#fff;
+    font-size:15px;
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    #ageCounter{
+        width:88%;
+        padding:16px 10px;
+        margin-top:20px;
+    }
+
+    .age-main{
+        font-size:24px;
+    }
+
+    .age-details{
+        gap:7px;
+    }
+
+    .age-details span{
+        font-size:11px;
+        padding:7px 9px;
+    }
+
+    .age-details strong{
+        font-size:13px;
+    }
+
+}
+/* =================================
+   ✨ Premium Age Counter Effects
+================================= */
+
+#ageCounter{
+    position:relative;
+    overflow:hidden;
+
+    animation:ageFloat 4s ease-in-out infinite;
+}
+
+/* Soft moving light */
+
+#ageCounter::before{
+    content:"";
+    position:absolute;
+    top:-80%;
+    left:-50%;
+
+    width:200%;
+    height:200%;
+
+    background:linear-gradient(
+        120deg,
+        transparent 40%,
+        rgba(255,255,255,.12) 50%,
+        transparent 60%
+    );
+
+    transform:rotate(15deg);
+    animation:ageShine 5s linear infinite;
+
+    pointer-events:none;
+}
+
+@keyframes ageShine{
+
+    0%{
+        transform:translateX(-60%) rotate(15deg);
+    }
+
+    100%{
+        transform:translateX(60%) rotate(15deg);
+    }
+
+}
+
+/* Floating card */
+
+@keyframes ageFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-4px);
+    }
+
+}
+
+/* Main age glow */
+
+.age-main{
+    position:relative;
+    animation:ageGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes ageGlow{
+
+    0%,100%{
+        text-shadow:
+            0 0 8px rgba(255,180,220,.35);
+    }
+
+    50%{
+        text-shadow:
+            0 0 18px rgba(255,180,220,.75),
+            0 0 30px rgba(255,120,190,.25);
+    }
+
+}
+
+/* Individual counters */
+
+.age-details span{
+    position:relative;
+    z-index:1;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
+}
+
+.age-details span:hover{
+
+    transform:translateY(-4px) scale(1.04);
+
+    background:rgba(255,255,255,.13);
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,.2),
+        0 0 15px rgba(255,150,200,.2);
+}
+
+/* Mobile tap effect */
+
+@media(max-width:600px){
+
+    .age-details span:active{
+        transform:scale(.95);
+    }
+
+}
+/* =================================
+   ✨ Final Mobile Polish
+================================= */
+
+html{
+    scroll-behavior:smooth;
+    overflow-x:hidden;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+/* Prevent accidental horizontal scrolling */
+
+*{
+    box-sizing:border-box;
+}
+
+/* Smooth button interaction */
+
+button{
+    -webkit-tap-highlight-color:transparent;
+    touch-action:manipulation;
+}
+
+/* Smooth image interaction */
+
+img{
+    -webkit-tap-highlight-color:transparent;
+}
+
+/* Mobile section spacing */
+
+@media(max-width:600px){
+
+    section{
+        width:100%;
+        max-width:100%;
+        overflow:hidden;
+    }
+
+    .celebration-content{
+        padding-left:12px;
+        padding-right:12px;
+    }
+
+    /* Keep birthday heading comfortable */
+
+    .celebration-content h1,
+    .celebration-content h2{
+        max-width:95%;
+        margin-left:auto;
+        margin-right:auto;
+        line-height:1.2;
+    }
+
+    /* Prevent buttons from touching screen edges */
+
+    button{
+        max-width:92%;
+    }
+
+}
+/* =================================
+   Final Message - Hidden Initially
+================================= */
+
+#finalSection.hidden{
+    display:none !important;
+    visibility:hidden !important;
+    opacity:0 !important;
+    pointer-events:none !important;
+}
+/* =========================================
+   💌 NEW PREMIUM ENVELOPE + LETTER
+   📱 Mobile Friendly
+========================================= */
+
+#letterSection {
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 60px 15px 80px;
+    overflow: hidden;
+}
+
+.letter-scene {
+    width: 100%;
+    max-width: 600px;
+    min-height: 80vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   💌 ENVELOPE
+========================================= */
+
+.envelope {
+    position: relative;
+    width: min(340px, 88vw);
+    height: 225px;
+    margin: 0 auto;
+    cursor: pointer;
+    perspective: 1200px;
+    flex-shrink: 0;
+}
+
+/* Envelope Back */
+
+.envelope-back {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        135deg,
+        #ff9fc3,
+        #ff5c94
+    );
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.25);
+
+    z-index: 1;
+}
+
+/* =========================================
+   📜 LETTER PAPER
+========================================= */
+
+.letter-paper {
+    position: absolute;
+
+    left: 50%;
+    bottom: 15px;
+
+    width: 86%;
+    height: 440px;
+
+    transform:
+        translateX(-50%)
+        translateY(0)
+        scaleY(0.12);
+
+    transform-origin: bottom center;
+
+    background: #fffdf8;
+
+    border-radius: 10px;
+
+    box-sizing: border-box;
+
+    opacity: 0;
+
+    overflow: hidden;
+
+    z-index: 3;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 1.8s cubic-bezier(.22,.61,.36,1),
+        opacity 0.6s ease;
+}
+
+/* Paper comes out first */
+
+.letter-paper.paper-out {
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(-70px)
+        scaleY(0.12);
+}
+
+/* Paper fully unfolds */
+
+.letter-paper.paper-open {
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(-150px)
+        scaleY(1);
+
+    z-index: 20;
+}
+
+/* =========================================
+   📖 LETTER CONTENT
+========================================= */
+
+.letter-inner {
+    width: 100%;
+    height: 100%;
+
+    padding: 28px 22px 25px;
+
+    box-sizing: border-box;
+
+    overflow-y: auto;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    transition:
+        opacity 0.8s ease 1.2s,
+        transform 0.8s ease 1.2s;
+}
+
+.letter-paper.paper-open .letter-inner {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.letter-inner h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.letter-inner p {
+    line-height: 1.8;
+    white-space: pre-line;
+}
+
+/* =========================================
+   📸 GALLERY BUTTON
+========================================= */
+
+#galleryBtn {
+    display: block;
+
+    margin: 25px auto 5px;
+
+    position: relative;
+
+    z-index: 30;
+}
+
+/* =========================================
+   ✉️ ENVELOPE FRONT
+========================================= */
+
+.envelope-front {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 120px;
+
+    background: #ff6fa5;
+
+    clip-path: polygon(
+        0 0,
+        50% 55%,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+
+    border-radius: 0 0 14px 14px;
+
+    z-index: 8;
+
+    pointer-events: none;
+}
+
+/* =========================================
+   🔺 ENVELOPE FLAP
+========================================= */
+
+.envelope-flap {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 125px;
+
+    background: #ff97bc;
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        50% 100%
+    );
+
+    transform-origin: top center;
+
+    transform: rotateX(0deg);
+
+    transition:
+        transform 0.9s ease;
+
+    z-index: 10;
+}
+
+/* =========================================
+   ❤️ WAX SEAL
+========================================= */
+
+.wax-seal {
+    position: absolute;
+
+    left: 50%;
+    top: 88px;
+
+    width: 58px;
+    height: 58px;
+
+    transform:
+        translateX(-50%)
+        scale(1);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #ff315f,
+            #c9003f
+        );
+
+    border-radius: 50%;
+
+    color: white;
+
+    font-size: 26px;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.3);
+
+    z-index: 15;
+
+    cursor: pointer;
+
+    transition:
+        transform .5s ease,
+        opacity .5s ease;
+}
+
+/* =========================================
+   💌 TAP TEXT
+========================================= */
+
+.tap-text {
+    margin-top: 35px;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    text-align: center;
+
+    animation:
+        pulseText 1.5s infinite;
+}
+
+@keyframes pulseText {
+
+    0%, 100% {
+        opacity: .5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+}
+
+/* =========================================
+   📱 MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    #letterSection {
+        padding:
+            40px 10px 70px;
+    }
+
+    .letter-scene {
+        min-height: 85vh;
+    }
+
+    .envelope {
+        width: 88vw;
+        max-width: 340px;
+        height: 210px;
+    }
+
+    .envelope-front {
+        height: 110px;
+    }
+
+    .envelope-flap {
+        height: 115px;
+    }
+
+    .wax-seal {
+        top: 80px;
+        width: 54px;
+        height: 54px;
+        font-size: 24px;
+    }
+
+    .letter-paper {
+        width: 92%;
+        height: 500px;
+    }
+
+    .letter-paper.paper-out {
+        transform:
+            translateX(-50%)
+            translateY(-55px)
+            scaleY(0.12);
+    }
+
+    .letter-paper.paper-open {
+        transform:
+            translateX(-50%)
+            translateY(-110px)
+            scaleY(1);
+    }
+
+    .letter-inner {
+        padding:
+            25px 18px 25px;
+    }
+
+    .letter-inner p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    #galleryBtn {
+        width: 90%;
+        max-width: 280px;
+    }
+
+}
+
+/* =========================================
+   📱 SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .envelope {
+        width: 90vw;
+        height: 195px;
+    }
+
+    .letter-paper {
+        width: 94%;
+        height: 480px;
+    }
+
+    .letter-paper.paper-open {
+        transform:
+            translateX(-50%)
+            translateY(-95px)
+            scaleY(1);
+    }
+
+}
+/* ======================================
+   💌 FINAL ENVELOPE + FOLDED PAPER FIX
+====================================== */
+
+.letter-scene {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+/* Envelope */
+.envelope {
+    position: relative;
+    width: min(340px, 88vw);
+    height: 230px;
+    margin: 0 auto;
+    perspective: 1200px;
+    cursor: pointer;
+}
+
+/* Envelope body */
+.envelope-back {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* ======================================
+   📜 FOLDED PAPER
+====================================== */
+
+.paper {
+    position: absolute !important;
+
+    left: 50% !important;
+    bottom: 15px !important;
+
+    width: 88% !important;
+    height: 185px !important;
+
+    transform:
+        translateX(-50%)
+        translateY(0)
+        scaleY(0.18) !important;
+
+    transform-origin: bottom center;
+
+    opacity: 0 !important;
+
+    z-index: 3;
+
+    overflow: hidden;
+
+    background: #fffdf8;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.25);
+
+    transition:
+        transform 1.4s cubic-bezier(.22,.61,.36,1),
+        opacity .7s ease,
+        height 1.4s ease;
+}
+
+/* 📜 Paper comes OUT of envelope */
+
+.paper.paper-out {
+    opacity: 1 !important;
+
+    transform:
+        translateX(-50%)
+        translateY(-75px)
+        scaleY(0.18) !important;
+}
+
+/* 📖 Paper fully unfolds */
+
+.paper.paper-open {
+    opacity: 1 !important;
+
+    height: 520px !important;
+
+    transform:
+        translateX(-50%)
+        translateY(-150px)
+        scaleY(1) !important;
+
+    z-index: 20;
+}
+
+/* ======================================
+   📄 PAPER CONTENT
+====================================== */
+
+.paper-content {
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    transition:
+        opacity .8s ease .5s,
+        transform .8s ease .5s;
+}
+
+/* Content only visible after paper opens */
+
+.paper.paper-open .paper-content {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+/* ======================================
+   🔺 ENVELOPE FRONT
+====================================== */
+
+.envelope-front {
+    position: absolute !important;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 120px;
+
+    z-index: 8;
+}
+
+/* ======================================
+   🔺 ENVELOPE FLAP
+====================================== */
+
+.envelope-flap {
+    position: absolute !important;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 125px;
+
+    z-index: 10;
+
+    transform-origin: top center;
+
+    transition:
+        transform .9s ease;
+}
+
+/* ======================================
+   ❤️ WAX SEAL
+====================================== */
+
+.wax-seal {
+    position: absolute;
+
+    left: 50%;
+    top: 105px;
+
+    z-index: 15;
+
+    transform: translateX(-50%);
+
+    transition:
+        transform .5s ease,
+        opacity .5s ease;
+}
+
+/* ======================================
+   📱 MOBILE
+====================================== */
+
+@media (max-width: 600px) {
+
+    .letter-scene {
+        min-height: 82vh;
+        padding-top: 20px;
+    }
+
+    .envelope {
+        width: 88vw;
+        max-width: 340px;
+        height: 210px;
+    }
+
+    .paper {
+        width: 88% !important;
+        height: 180px !important;
+    }
+
+    .paper.paper-open {
+        height: 500px !important;
+
+        transform:
+            translateX(-50%)
+            translateY(-130px)
+            scaleY(1) !important;
+    }
+
+    .paper-middle {
+        padding: 15px;
+    }
+
+    .paper-content h2 {
+        font-size: 22px;
+    }
+
+    .paper-content p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    #galleryBtn {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+}
+/* ======================================
+   📜 FINAL PAPER POSITION FIX
+====================================== */
+
+#letterSection {
+    position: relative;
+    overflow: visible;
+}
+
+.letter-scene {
+    position: relative;
+    width: 100%;
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 80px;
+}
+
+/* Envelope fixed center position */
+.envelope {
+    position: relative;
+    width: min(340px, 88vw);
+    height: 230px;
+    margin: 0 auto;
+}
+
+/* Folded paper */
+#letterPaper {
+    position: absolute !important;
+    left: 50% !important;
+    bottom: 15px !important;
+
+    width: 88% !important;
+    height: 185px !important;
+
+    transform:
+        translateX(-50%)
+        translateY(0)
+        scaleY(.18) !important;
+
+    opacity: 0 !important;
+    z-index: 3;
+
+    transition:
+        transform 1.4s ease,
+        opacity .7s ease,
+        height 1.4s ease;
+}
+
+/* Paper comes out only a little */
+#letterPaper.paper-out {
+    opacity: 1 !important;
+
+    transform:
+        translateX(-50%)
+        translateY(-55px)
+        scaleY(.18) !important;
+}
+
+/* Paper opens BELOW the section above */
+#letterPaper.paper-open {
+    opacity: 1 !important;
+
+    height: 500px !important;
+
+    transform:
+        translateX(-50%)
+        translateY(-30px)
+        scaleY(1) !important;
+
+    z-index: 20;
+}
+
+/* Letter content hidden until paper opens */
+#letterPaper .paper-content {
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity .7s ease,
+        visibility .7s ease;
+}
+
+#letterPaper.paper-open .paper-content {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .letter-scene {
+        min-height: 72vh;
+        padding-top: 10px;
+        padding-bottom: 60px;
+    }
+
+    .envelope {
+        width: 88vw;
+        max-width: 340px;
+        height: 210px;
+    }
+
+    #letterPaper.paper-open {
+        height: 500px !important;
+
+        transform:
+            translateX(-50%)
+            translateY(-20px)
+            scaleY(1) !important;
+    }
+
+}
+/* ======================================
+   📜 FINAL PAPER POSITION
+   Keep opened letter inside its section
+====================================== */
+
+#letterSection {
+    position: relative;
+    overflow: visible;
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+.letter-scene {
+    position: relative;
+    width: 100%;
+    min-height: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 80px;
+}
+
+/* Envelope position */
+.envelope {
+    position: relative;
+    width: min(340px, 88vw);
+    height: 230px;
+    margin-top: 20px;
+}
+
+/* Paper folded state */
+#letterPaper {
+    bottom: 15px !important;
+}
+
+/* Paper comes out */
+#letterPaper.paper-out {
+    transform:
+        translateX(-50%)
+        translateY(-55px)
+        scaleY(.18) !important;
+}
+
+/* Fully opened paper */
+#letterPaper.paper-open {
+    height: 500px !important;
+
+    transform:
+        translateX(-50%)
+        translateY(20px)
+        scaleY(1) !important;
+
+    z-index: 20;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    #letterSection {
+        padding-top: 30px;
+        padding-bottom: 80px;
+    }
+
+    .letter-scene {
+        min-height: 720px;
+        padding-top: 50px;
+    }
+
+    #letterPaper.paper-open {
+        height: 500px !important;
+
+        transform:
+            translateX(-50%)
+            translateY(20px)
+            scaleY(1) !important;
+    }
+
+}
+/* ==========================================
+   💌 FINAL FIX — LETTER STAYS IN ITS SECTION
+========================================== */
+
+#letterSection {
+    position: relative;
+    overflow: visible !important;
+}
+
+#letterSection .letter-scene {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 850px;
+    padding-top: 80px;
+    box-sizing: border-box;
+}
+
+/* Envelope */
+#letterSection .envelope {
+    position: relative;
+    width: min(340px, 88vw);
+    height: 230px;
+    flex-shrink: 0;
+    margin: 0 auto;
+}
+
+/* Paper — folded inside envelope */
+#letterSection #letterPaper {
+    position: absolute !important;
+    left: 50% !important;
+    top: 45px !important;
+    bottom: auto !important;
+
+    width: 88% !important;
+    height: 185px !important;
+
+    transform: translateX(-50%) scaleY(0.18) !important;
+    transform-origin: top center !important;
+
+    opacity: 0 !important;
+    z-index: 3 !important;
+
+    transition:
+        transform 1.4s ease,
+        opacity 0.5s ease,
+        height 1.4s ease !important;
+}
+
+/* Folded paper comes out */
+#letterSection #letterPaper.paper-out {
+    opacity: 1 !important;
+
+    transform:
+        translateX(-50%)
+        translateY(70px)
+        scaleY(0.18) !important;
+}
+
+/* Fully unfolded paper */
+#letterSection #letterPaper.paper-open {
+    opacity: 1 !important;
+
+    height: 500px !important;
+
+    transform:
+        translateX(-50%)
+        translateY(70px)
+        scaleY(1) !important;
+
+    z-index: 20 !important;
+}
+
+/* Content hidden before opening */
+#letterSection #letterPaper .paper-content {
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* Content visible after opening */
+#letterSection #letterPaper.paper-open .paper-content {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Tap text */
+#letterSection .tap-text {
+    position: relative;
+    z-index: 30;
+    margin-top: 100px;
+}
+
+/* Gallery button stays inside paper */
+#letterSection #galleryBtn {
+    position: relative;
+    z-index: 30;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    #letterSection .letter-scene {
+        min-height: 820px;
+        padding-top: 60px;
+    }
+
+    #letterSection .envelope {
+        width: 88vw;
+        max-width: 340px;
+        height: 210px;
+    }
+
+    #letterSection #letterPaper.paper-open {
+        height: 500px !important;
+
+        transform:
+            translateX(-50%)
+            translateY(60px)
+            scaleY(1) !important;
+    }
+
+}
+/* ==========================================
+   📜 LETTER PAPER WITH NOTEBOOK LINES
+========================================== */
+
+#letterPaper .paper-middle {
+    position: relative;
+
+    height: calc(100% - 60px);
+
+    padding: 25px 20px 40px;
+
+    box-sizing: border-box;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    -webkit-overflow-scrolling: touch;
+
+    /* 📖 Paper background + horizontal lines */
+    background-color: #fffdf8;
+
+    background-image:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0px,
+            transparent 30px,
+            rgba(100, 150, 200, 0.35) 31px,
+            transparent 32px
+        );
+
+    background-size: 100% 32px;
+}
+
+
+/* ==========================================
+   💌 LETTER CONTENT
+========================================== */
+
+#letterPaper .paper-content {
+    position: relative;
+
+    width: 100%;
+
+    color: #4a3038;
+
+    font-family: "Poppins", sans-serif;
+
+    text-align: left;
+
+    line-height: 2;
+
+    padding-bottom: 30px;
+}
+
+
+/* 💖 Letter Heading */
+
+#letterPaper .paper-content h2 {
+
+    text-align: center;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 30px;
+
+    color: #d94f7b;
+
+    margin:
+        0 0 25px;
+}
+
+
+/* 📝 Letter Text */
+
+#letterPaper #letter {
+    white-space: pre-wrap !important;
+
+    font-size: 14px;
+
+    line-height: 2 !important;
+
+    word-spacing: 3px;
+
+    letter-spacing: 0.2px;
+
+    margin: 0;
+
+    padding: 0;
+
+    color: #4a3038;
+
+    text-align: left;
+
+    overflow-wrap: break-word;
+}
+
+
+/* 📸 Favourite Button */
+
+#letterPaper #galleryBtn {
+
+    display: block;
+
+    margin:
+        30px auto 15px;
+
+    position: relative;
+
+    z-index: 30;
+}
+
+
+/* ==========================================
+   📱 MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+    #letterPaper .paper-middle {
+
+        padding:
+            22px 15px 40px;
+
+        background-size:
+            100% 30px;
+
+        overflow-y: auto;
+    }
+
+    #letterPaper .paper-content h2 {
+
+        font-size: 27px;
+
+        margin-bottom: 20px;
+    }
+
+    #letterPaper #letter {
+
+        font-size: 13px;
+
+        line-height: 1.95;
+    }
+
+}
+
+/* ==========================================
+   📱 MOBILE NOTEBOOK PAPER
+========================================== */
+
+@media (max-width: 600px) {
+
+    #letterPaper .paper-middle {
+
+        height: calc(100% - 60px);
+
+        padding:
+            22px 15px 40px;
+
+        background-size:
+            100% 30px;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #letterPaper .paper-content h2 {
+
+        font-size: 27px;
+
+        margin-bottom: 20px;
+    }
+
+    #letterPaper #letter {
+
+        font-size: 13px;
+
+        line-height: 1.95;
+    }
+
+}
+/* Hide Tap the Envelope completely after opening */
+
+#letterSection .tap-text {
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#letterSection .tap-text.hidden-tap {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+/* ==========================================
+   📸 MY MOST FAVOURITE PART - PREMIUM GLOW
+========================================== */
+
+
+
+/* Touch / Hover Highlight */
+
+#letterPaper.paper-open #galleryBtn:hover,
+#letterPaper.paper-open #galleryBtn:active {
+
+    transform: translateY(-2px) scale(1.04) !important;
+
+    box-shadow:
+        0 0 15px rgba(255, 79, 145, 0.7),
+        0 0 35px rgba(255, 126, 179, 0.5);
+}
+#galleryBtn {
+    color: black !important;
+}
+/* Remove blue tap highlight on envelope and paper */
+
+.envelope,
+.paper,
+.envelope-back,
+.envelope-front,
+.envelope-flap,
+.wax-seal {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    user-select: none;
+}
+/* ==========================================
+   📜 FORCE HORIZONTAL NOTEBOOK LINES
+========================================== */
+
+#letterPaper .paper-middle {
+    
+    background-image: repeating-linear-gradient(
+        to bottom,
+        #fffdf8 0px,
+        #fffdf8 29px,
+        #b8cfe3 30px,
+        #fffdf8 31px
+    ) !important;
+
+    background-size: 100% 31px !important;
+
+    background-repeat: repeat !important;
+
+    overflow-y: auto !important;
+}
+/* ==========================================
+   📜 FULL LETTER PAPER NOTEBOOK LINES
+========================================== */
+
+#letterPaper.paper-open {
+    background-color: #fffdf8 !important;
+
+    background-image:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0px,
+            transparent 30px,
+            rgba(100, 150, 200, 0.35) 31px,
+            transparent 32px
+        ) !important;
+
+    background-size: 100% 32px !important;
+    background-repeat: repeat !important;
+}
+
+/* Keep middle section transparent
+   so full paper lines remain visible */
+
+#letterPaper.paper-open .paper-middle {
+    background: transparent !important;
+}
+/* ==========================================
+   📜 WHOLE LETTER PAPER SCROLL
+========================================== */
+
+
+/* Paper ke andar ka middle section */
+#letterPaper.paper-open .paper-middle {
+    height: auto !important;
+    min-height: 0 !important;
+
+    overflow: visible !important;
+
+    background: transparent !important;
+}
+
+/* Letter content ko full height lene do */
+#letterPaper.paper-open .paper-content {
+    height: auto !important;
+    min-height: 100% !important;
+
+    padding-bottom: 40px !important;
+}
+/* ==========================================
+   📜 FINAL FULL LETTER PAPER FIX
+========================================== */
+
+/* Open paper */
+#letterPaper.paper-open {
+    height: auto !important;
+    min-height: 520px !important;
+
+    overflow: visible !important;
+
+    background: #fffdf8 !important;
+
+    transform:
+        translateX(-50%)
+        translateY(0)
+        scaleY(1) !important;
+
+    z-index: 25;
+}
+
+/* Middle part becomes full paper */
+#letterPaper.paper-open .paper-middle {
+    height: auto !important;
+
+    min-height: 420px !important;
+
+    overflow: visible !important;
+
+    padding:
+        30px 20px 40px !important;
+
+    background-color: #fffdf8 !important;
+
+    background-image:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0px,
+            transparent 30px,
+            rgba(100, 150, 200, 0.35) 31px,
+            transparent 32px
+        ) !important;
+
+    background-size:
+        100% 32px !important;
+}
+
+/* Letter content */
+#letterPaper.paper-open .paper-content {
+    height: auto !important;
+
+    min-height: 0 !important;
+
+    overflow: visible !important;
+
+    padding-bottom: 30px !important;
+}
+
+/* Letter text */
+#letterPaper.paper-open #letter {
+    height: auto !important;
+
+    overflow: visible !important;
+
+    white-space: pre-line !important;
+}
+
+/* Favourite button */
+#letterPaper.paper-open #galleryBtn {
+    margin:
+        30px auto 20px !important;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+}
+
+
+/* ==========================================
+   📱 MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+    #letterPaper.paper-open {
+        width: 90% !important;
+
+        height: auto !important;
+
+        min-height: 520px !important;
+
+        overflow: visible !important;
+    }
+
+    #letterPaper.paper-open .paper-middle {
+
+        min-height: 420px !important;
+
+        padding:
+            25px 15px 40px !important;
+    }
+
+}
+/* ==========================================
+   📜 FINAL LETTER PAPER FIX
+========================================== */
+
+#letterPaper.paper-open {
+    width: 94vw !important;
+    max-width: 600px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+
+    transform: translateX(-50%) translateY(0) scaleY(1) !important;
+
+    z-index: 25 !important;
+}
+
+
+/* 📜 PAPER BODY + HORIZONTAL LINES */
+
+#letterPaper.paper-open .paper-middle {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+
+    box-sizing: border-box !important;
+
+    overflow: visible !important;
+
+    padding: 20px 22px 30px !important;
+
+    /* Lines ko forcefully visible rakho */
+    background-color: #fffdf8 !important;
+
+    background-image: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 31px,
+        rgba(100, 150, 200, 0.4) 32px,
+        transparent 33px
+    ) !important;
+
+    background-repeat: repeat !important;
+    background-size: 100% 33px !important;
+}
+
+
+/* ✍️ LETTER CONTENT */
+
+#letterPaper.paper-open .paper-content {
+    width: 100% !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: visible !important;
+
+    line-height: 33px !important;
+}
+
+
+/* 📝 LETTER TEXT */
+
+#letterPaper.paper-open #letter {
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-size: 14px !important;
+
+    line-height: 33px !important;
+
+    white-space: pre-line !important;
+
+    overflow: visible !important;
+}
+
+
+/* 💖 HEADING */
+
+#letterPaper.paper-open .paper-content h2 {
+    margin: 0 0 15px 0 !important;
+
+    line-height: 33px !important;
+}
+
+
+/* 💞 BUTTON */
+
+#letterPaper.paper-open #galleryBtn {
+    display: block !important;
+
+    margin: 25px auto 10px !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    position: relative !important;
+    z-index: 100 !important;
+}
+
+
+/* ==========================================
+   📱 MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+    #letterPaper.paper-open {
+        width: 94vw !important;
+        max-width: none !important;
+    }
+
+    #letterPaper.paper-open .paper-middle {
+        padding: 18px 15px 25px !important;
+
+        background-size: 100% 30px !important;
+    }
+
+    #letterPaper.paper-open #letter {
+        font-size: 13px !important;
+        line-height: 30px !important;
+    }
+
+    #letterPaper.paper-open .paper-content {
+        line-height: 30px !important;
+    }
+}
+/* ==========================================
+   📜 FINAL — LETTER PAPER SIZE & NOTEBOOK
+========================================== */
+
+#letterSection #letterPaper.paper-open {
+    width: 94vw !important;
+    max-width: 600px !important;
+
+    height: 500px !important;
+    min-height: 500px !important;
+
+    overflow: hidden !important;
+
+    transform:
+        translateX(-50%)
+        translateY(20px)
+        scaleY(1) !important;
+
+    background-color: #fffdf8 !important;
+
+    z-index: 25 !important;
+}
+
+
+/* ==========================================
+   📜 FULL PAPER NOTEBOOK LINES
+========================================== */
+
+#letterSection #letterPaper.paper-open .paper-middle {
+
+    height: calc(100% - 60px) !important;
+
+    padding:
+        20px 22px 30px !important;
+
+    box-sizing: border-box !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    -webkit-overflow-scrolling: touch;
+
+    background-color: #fffdf8 !important;
+
+    background-image:
+        repeating-linear-gradient(
+            to bottom,
+            #fffdf8 0px,
+            #fffdf8 31px,
+            #b8cfe3 32px,
+            #fffdf8 33px
+        ) !important;
+
+    background-size:
+        100% 33px !important;
+
+    background-repeat:
+        repeat !important;
+}
+
+
+/* ==========================================
+   ✍️ LETTER CONTENT
+========================================== */
+
+#letterSection #letterPaper.paper-open .paper-content {
+
+    width: 100% !important;
+
+    height: auto !important;
+
+    min-height: 0 !important;
+
+    padding: 0 !important;
+
+    margin: 0 !important;
+
+    overflow: visible !important;
+}
+
+
+/* ==========================================
+   💖 HEADING
+========================================== */
+
+#letterSection #letterPaper.paper-open .paper-content h2 {
+
+    margin:
+        0 0 15px !important;
+
+    line-height:
+        33px !important;
+}
+
+
+/* ==========================================
+   📝 LETTER TEXT — LINE ALIGNMENT
+========================================== */
+
+#letterSection #letterPaper.paper-open #letter {
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    font-size: 14px !important;
+
+    line-height: 33px !important;
+
+    white-space: pre-line !important;
+
+    color: #4a3038 !important;
+}
+
+
+/* ==========================================
+   💞 FAVOURITE BUTTON
+========================================== */
+
+#letterSection #letterPaper.paper-open #galleryBtn {
+
+    display: block !important;
+
+    margin:
+        25px auto 15px !important;
+
+    position: relative !important;
+
+    z-index: 100 !important;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+}
+
+
+/* ==========================================
+   📱 MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+    #letterSection #letterPaper.paper-open {
+
+        width: 94vw !important;
+
+        max-width: none !important;
+
+        height: 500px !important;
+
+        min-height: 500px !important;
+
+        transform:
+            translateX(-50%)
+            translateY(20px)
+            scaleY(1) !important;
+    }
+
+
+    #letterSection #letterPaper.paper-open .paper-middle {
+
+        height:
+            calc(100% - 60px) !important;
+
+        padding:
+            18px 15px 25px !important;
+
+        background-size:
+            100% 30px !important;
+    }
+
+
+    #letterSection #letterPaper.paper-open #letter {
+
+        font-size:
+            13px !important;
+
+        line-height:
+            30px !important;
+    }
+
+}
+/* ==========================================
+   💌 SECRET SURPRISE
+========================================== */
+
+.secret-surprise {
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+/* Secret Button */
+
+#secretBtn {
+    position: relative;
+    z-index: 5;
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+#secretBtn:hover,
+#secretBtn:active {
+    transform: scale(1.04);
+}
+
+/* Secret Message */
+
+.secret-message {
+    width: 90%;
+    max-width: 520px;
+    margin: 25px auto 20px;
+    padding: 30px 20px;
+
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    border-radius: 22px;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, .2);
+
+    opacity: 0;
+    transform: translateY(25px) scale(.95);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+}
+
+/* Message visible */
+
+.secret-message.show-secret {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Heart */
+
+.secret-heart {
+    font-size: 50px;
+
+    animation:
+        secretHeartbeat 1.5s infinite;
+}
+
+/* Heading */
+
+.secret-message h2 {
+    margin: 15px 0;
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 32px;
+}
+
+/* Text */
+
+.secret-message p {
+    font-size: 14px;
+    line-height: 1.9;
+    text-align: center;
+}
+
+/* Ending */
+
+.secret-ending {
+    margin-top: 20px;
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 25px;
+}
+
+/* Heart Animation */
+
+@keyframes secretHeartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+}
+
+/* 📱 Mobile */
+
+@media (max-width: 600px) {
+
+    .secret-surprise {
+        margin-top: 25px;
+    }
+
+    .secret-message {
+        width: 92%;
+        padding: 25px 16px;
+    }
+
+    .secret-message h2 {
+        font-size: 28px;
+    }
+
+    .secret-message p {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .secret-ending {
+        font-size: 23px;
+    }
+
+}
+/* ==========================================
+   ✨ TOUCH SPARKLES EFFECT
+========================================== */
+
+.touch-sparkle {
+    position: fixed;
+
+    width: 8px;
+    height: 8px;
+
+    pointer-events: none;
+
+    z-index: 99999;
+
+    font-size: 16px;
+
+    animation:
+        touchSparkle 900ms ease-out forwards;
+}
+
+@keyframes touchSparkle {
+
+    0% {
+        opacity: 1;
+        transform:
+            translate(0, 0)
+            scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translate(
+                var(--move-x),
+                var(--move-y)
+            )
+            scale(0);
+    }
+
+}
+/* ==========================================
+   📝 TYPEWRITER LETTER EFFECT
+========================================== */
+
+#letterPaper.paper-open #letter {
+    opacity: 1;
+}
+
+/* Mobile friendly */
+@media (max-width: 600px) {
+
+    #letterPaper #letter {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+}
+@media (max-width: 600px) {
+
+    #letterPaper #letter {
+        font-size: 13px;
+
+        line-height: 1.95 !important;
+
+        word-spacing: 2px;
+
+        letter-spacing: 0.15px;
+    }
+
+}
+/* ==========================================
+   🎵 PREMIUM FLOATING MUSIC PLAYER
+========================================== */
+
+#musicPlayer {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 8px 12px 8px 8px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border: 1px solid rgba(255, 105, 150, 0.25);
+
+    border-radius: 50px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18);
+
+    backdrop-filter: blur(12px);
+
+    z-index: 99999;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+#musicPlayer:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.22);
+}
+
+/* Music Button */
+
+#musicBtn {
+    width: 44px;
+    height: 44px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #ff4f91;
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+#musicBtn:active {
+    transform: scale(0.9);
+}
+
+/* Playing Animation */
+
+#musicPlayer.playing #musicBtn {
+
+    animation:
+        musicPulse 1.5s infinite;
+
+}
+
+@keyframes musicPulse {
+
+    0% {
+        box-shadow:
+            0 0 0 0 rgba(255, 79, 145, 0.5);
+    }
+
+    70% {
+        box-shadow:
+            0 0 0 12px rgba(255, 79, 145, 0);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 0 rgba(255, 79, 145, 0);
+    }
+
+}
+
+/* Music Information */
+
+.music-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    max-width: 130px;
+
+}
+
+.music-info span {
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: #4a3038;
+
+    white-space: nowrap;
+
+}
+
+.music-info small {
+
+    font-size: 9px;
+
+    color: #888;
+
+    white-space: nowrap;
+
+}
+
+/* Equalizer */
+
+.music-equalizer {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 2px;
+
+    height: 20px;
+
+}
+
+.music-equalizer i {
+
+    display: block;
+
+    width: 3px;
+
+    height: 5px;
+
+    background: #ff4f91;
+
+    border-radius: 5px;
+
+}
+
+#musicPlayer.playing
+.music-equalizer i:nth-child(1) {
+
+    animation:
+        equalizer 0.6s infinite alternate;
+}
+
+#musicPlayer.playing
+.music-equalizer i:nth-child(2) {
+
+    animation:
+        equalizer 0.8s infinite alternate;
+}
+
+#musicPlayer.playing
+.music-equalizer i:nth-child(3) {
+
+    animation:
+        equalizer 0.5s infinite alternate;
+}
+
+#musicPlayer.playing
+.music-equalizer i:nth-child(4) {
+
+    animation:
+        equalizer 0.7s infinite alternate;
+}
+
+@keyframes equalizer {
+
+    from {
+        height: 4px;
+    }
+
+    to {
+        height: 20px;
+    }
+
+}
+
+/* ==========================================
+   📱 MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+    #musicPlayer {
+
+        right: 12px;
+
+        bottom: 12px;
+
+        padding:
+            6px 9px 6px 6px;
+
+    }
+
+    #musicBtn {
+
+        width: 42px;
+
+        height: 42px;
+
+        font-size: 18px;
+
+    }
+
+    .music-info {
+
+        max-width: 105px;
+
+    }
+
+    .music-info span {
+
+        font-size: 11px;
+
+    }
+
+    .music-info small {
+
+        font-size: 8px;
+
+    }
+
+}
